@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #c7d4ff, #f2e8ff);
+        }
+        .contact-container {
+            background: #dfb4b4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dcb1b1;
+            border-radius: 5px;
+            outline: none;
+        }
+        input:focus {
+            border-color: #a6adc4;
+        }
+        button {
+            background: #6c82b7;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h2>Student Registration Form</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="rollno" placeholder="Your Roll No" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="class" placeholder="Your Class" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="div" placeholder="Your Div" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="mobile" placeholder="Your Mobile No" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
