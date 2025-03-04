@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #876565;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ff6f61;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)),
+                url('https://sepiastories.in/wp-content/uploads/2024/05/image-1-sepia-blog-2.webp') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #ff6f61;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .hero .cta-button:hover {
+            background: #e65a50;
+            transform: translateY(-3px);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .featured-collection {
+            margin-bottom: 2rem;
+        }
+
+        .featured-collection h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #bac8d6;
+            text-align: center;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .collection-item {
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .collection-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .collection-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .collection-item h4 {
+            margin: 1rem 0;
+            font-size: 1.3rem;
+            color: #b1aae2;
+        }
+
+        .collection-item p {
+            color: #777;
+            font-size: 1rem;
+        }
+
+        .customer-reviews {
+            margin-bottom: 2rem;
+        }
+
+        .customer-reviews h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #8aa6c3;
+            text-align: center;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-item p {
+            color: #555;
+            font-style: italic;
+        }
+
+        .review-item h4 {
+            margin-top: 1rem;
+            color: #8ca9c7;
+            font-size: 1.2rem;
+        }
+
+        .newsletter {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #7590ab;
+        }
+
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 1rem;
+        }
+
+        .newsletter button {
+            padding: 10px 20px;
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter button:hover {
+            background: #d68e89;
+        }
+
+        footer {
+            background: #b3c9e0;
+            color: #f99c9c;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .collection-grid, .review-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clothing Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section class="hero">
+            <div>
+                <h2>Welcome To The Store</h2>
+                <p>Wrap Yourself in Style.</p>
+                <a href="gallery.html" class="cta-button">Shop Now</a>
+            </div>
+        </section>
+
+       
+        <section class="gallery">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e" alt="Summer Collection">
+            <img src="https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?cs=srgb&dl=pexels-pixabay-325876.jpg&fm=jpg" alt="Men's Fashion">
+            <img src="https://img.freepik.com/free-photo/clothes-hanger-filled-with-solid-yellow-female-sweaters-one-white-sweater-stands-out-collection-being-sale_273609-32905.jpg?semt=ais_hybrid" alt="Women's Fashion">
+        </section>
+
+       
+        <section class="featured-collection">
+            <h3>Our latest Collection</h3>
+            <div class="collection-grid">
+                <div class="collection-item">
+                    <img src="https://tusokonline.com/cdn/shop/products/3_13cc9a26-51ec-46c0-801b-13ae12e994f3.jpg?v=1676383491" alt= Stay Ahead of the Trend ">
+                    <h4>Stay Ahead of the Trend</h4>
+                    <p>Own the Spotlight.</p>
+                </div>
+                <div class="collection-item">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/10/MS/UW/PU/161562894/fashion-garments-500x500.jpg" alt="Suit Collection">
+                    <h4>Suit Collection</h4>
+                    <p>Suit up.Stands Out.</p>
+                </div>
+                <div class="collection-item">
+                    <img src="https://i.pinimg.com/736x/c7/69/bf/c769bf46528b89450a6cfdb421179ce2.jpg" alt="Formal Collection">
+                    <h4>Wedding Collection</h4>
+                    <p>Elegance For Every Wedding Day.</p>
+                </div>
+            </div>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Clothing Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>

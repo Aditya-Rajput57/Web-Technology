@@ -1,0 +1,109 @@
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gallery - Clothing Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #757171;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            text-align: center;
+        }
+        .gallery img {
+            display: block;
+            margin: 0 auto;
+        }
+        .gallery-item p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+
+    <header>
+        <h1>Clothing Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2 class="head2">Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://p.globalsources.com/IMAGES/PDT/B1208378354/Two-Color-Polo-Shirt-Cheap-Long-Sleeve-Solid-Color.jpg" alt="Polo Shirt" height="400px">
+                <p>Polo Shirt</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://m.media-amazon.com/images/I/51D+iyUHCtL._AC_UY1100_.jpg" alt="Denim Jacket" height="400px">
+                <p>Denim Jacket</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://media.istockphoto.com/id/1257563298/photo/fashion-clothes-on-a-rack-in-a-light-background-indoors-place-for-text.jpg?s=612x612&w=0&k=20&c=UTL3KlMvLkteLe_9l3QbMklBcyaKQM5j6mcDxxtTr4Y=" height="400px">
+                <p>Casual Wear Collection</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.earthday.org/wp-content/uploads/2023/07/pexels-ffte.webp" height="400px" width="300px">
+                <p>Sustainable Fashion</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://cdn.pixabay.com/photo/2014/08/26/21/49/jeans-428614_640.jpg" height="400px">
+                <p>Blue Jeans</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1560243563-062bfc001d68?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2xvdGhpbmd8ZW58MHx8MHx8fDA%3D" alt="Summer Dress" height="400px">
+                <p>Summer Dress</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://plus.unsplash.com/premium_photo-1664202526559-e21e9c0fb46a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D" alt="Elegant Suit" height="400px">
+                <p>Elegant Suit</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Clothing Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>
